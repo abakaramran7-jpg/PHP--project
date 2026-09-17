@@ -1,0 +1,1347 @@
+# Introduction to PHP & MySQL
+
+## 📚 Course Information
+
+**Course:** Web Application Development: PHP & MySQL
+**Chapter:** Chapter 1 - Introduction to PHP & MySQL
+**Lecturer:** Yahye Ali Isse
+**Technology:** PHP, MySQL, HTML, CSS, JavaScript, jQuery
+
+This repository contains learning materials, examples, exercises, and practical work related to **Web Application Development using PHP and MySQL**.
+
+---
+
+## 📖 Table of Contents
+
+* [Introduction](#introduction)
+* [Course Objectives](#course-objectives)
+* [What is PHP?](#what-is-php)
+* [What is MySQL?](#what-is-mysql)
+* [Web Application Basics](#web-application-basics)
+* [HTTP and HTML](#http-and-html)
+* [Client and Server](#client-and-server)
+* [Request and Response](#request-and-response)
+* [How PHP Works](#how-php-works)
+* [What Can PHP Do?](#what-can-php-do)
+* [Key PHP Features](#key-php-features)
+* [Prerequisites](#prerequisites)
+* [Development Environment](#development-environment)
+* [XAMPP](#xampp)
+* [WAMP, LAMP, MAMP and XAMPP](#wamp-lamp-mamp-and-xampp)
+* [Apache Web Server](#apache-web-server)
+* [Starting XAMPP](#starting-xampp)
+* [Localhost](#localhost)
+* [Changing the Apache Port](#changing-the-apache-port)
+* [Document Root](#document-root)
+* [Creating the First PHP Page](#creating-the-first-php-page)
+* [Index Page](#index-page)
+* [Visual Studio Code](#visual-studio-code)
+* [Types of Websites](#types-of-websites)
+* [Course Technologies](#course-technologies)
+* [Learning Resources](#learning-resources)
+
+---
+
+# Introduction
+
+PHP and MySQL are commonly used technologies for developing **dynamic and interactive web applications**.
+
+PHP stands for **Hypertext Preprocessor**. It is a server-side scripting language used to create dynamic web pages and web applications.
+
+MySQL is a database management system that can be used with PHP to store, retrieve, update, and delete application data.
+
+The course focuses on developing complete web applications using technologies such as:
+
+* HTML
+* CSS
+* PHP
+* MySQL
+* JavaScript
+* jQuery
+
+The main goal is to understand how a web application works from the browser to the server and database.
+
+---
+
+# Course Objectives
+
+By the end of the course, students should be able to:
+
+1. Understand web application development using PHP and MySQL.
+2. Develop dynamic and interactive web applications using PHP.
+3. Apply fundamental PHP programming concepts.
+4. Develop and validate web forms.
+5. Use jQuery, AJAX, and JSON in interactive applications.
+6. Design databases and perform SQL operations using MySQL.
+7. Develop secure PHP and MySQL CRUD applications.
+8. Develop and consume RESTful APIs using PHP and JSON.
+9. Implement sessions, authentication, authorization, and basic security.
+10. Apply MVC and modern PHP application practices.
+11. Understand fundamental Laravel concepts.
+12. Design, develop, test, and present a complete PHP and MySQL web application.
+
+---
+
+# What is PHP?
+
+**PHP** stands for **Hypertext Preprocessor**.
+
+PHP is an **HTML-embedded scripting language** and a **server-side scripting language**.
+
+It is used to create:
+
+* Dynamic web pages
+* Interactive websites
+* Web applications
+* Database-driven applications
+* Forms
+* APIs
+* Authentication systems
+* E-commerce functionality
+
+PHP code is executed on the **server**, not directly in the user's browser.
+
+---
+
+# What is MySQL?
+
+**MySQL** is a relational database management system used to store and manage application data.
+
+PHP can communicate with MySQL so that a web application can work with stored data.
+
+For example, a web application can use MySQL to store:
+
+```text
+Users
+Products
+Customers
+Orders
+Students
+Employees
+Animals
+Sales
+Expenses
+```
+
+PHP can then perform operations such as:
+
+```text
+Create
+Read
+Update
+Delete
+```
+
+These operations are commonly known as **CRUD**.
+
+---
+
+# Web Application Basics
+
+A web application normally involves communication between a:
+
+```text
+Client
+   ↓
+Web Server
+   ↓
+Application / PHP
+   ↓
+Database
+```
+
+For example:
+
+```text
+User enters a website
+        ↓
+Browser sends request
+        ↓
+Web server receives request
+        ↓
+PHP processes the request
+        ↓
+PHP communicates with MySQL if necessary
+        ↓
+Server creates a response
+        ↓
+Browser displays the result
+```
+
+---
+
+# HTTP and HTML
+
+## HTTP
+
+**HTTP (Hypertext Transfer Protocol)** is a communication standard that controls requests and responses between a browser and a web server.
+
+For example:
+
+```text
+Browser → HTTP Request → Web Server
+Browser ← HTTP Response ← Web Server
+```
+
+## HTML
+
+**HTML (HyperText Markup Language)** is the standard markup language used to create documents displayed in a web browser.
+
+HTML is responsible for the structure of a web page.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
+```
+
+---
+
+# Client and Server
+
+## Client
+
+A **client** is the computer or device that sends a request for a service.
+
+In web development, the web browser acts as a client.
+
+Examples:
+
+* Google Chrome
+* Microsoft Edge
+* Mozilla Firefox
+* Opera
+
+## Server
+
+A **server** receives a request from the client and attempts to respond with the requested information.
+
+For example:
+
+```text
+Client: "Give me this web page."
+
+Server: "Here is the web page."
+```
+
+Other devices may exist between the client and server, including:
+
+* Routers
+* Proxies
+* Gateways
+
+These help transfer requests and responses correctly.
+
+---
+
+# Request and Response
+
+The basic web communication process is:
+
+```text
+1. Browser requests a web page.
+2. Web server receives the request.
+3. Web server processes the request.
+4. Server sends a response.
+5. Browser displays the response.
+```
+
+For example:
+
+```text
+Browser
+   |
+   | GET /index.php
+   ↓
+Apache Web Server
+   |
+   | PHP processes the file
+   ↓
+Response
+   |
+   ↓
+Browser displays HTML
+```
+
+---
+
+# How PHP Works
+
+PHP works mainly on the server side.
+
+When a user requests a PHP page:
+
+```text
+User
+ ↓
+Browser
+ ↓
+Web Server
+ ↓
+PHP
+ ↓
+HTML Response
+ ↓
+Browser
+```
+
+The server processes the PHP code before sending the result to the browser.
+
+For example:
+
+```php
+<?php
+echo "Hello World";
+?>
+```
+
+The browser does not receive the PHP code itself.
+
+Instead, PHP generates a response that the browser can display.
+
+PHP can generate:
+
+* HTML
+* JSON
+* Redirects
+* Other HTTP responses
+
+PHP can also communicate with databases such as MySQL.
+
+---
+
+# What Can PHP Do?
+
+PHP can be used for many types of web application functionality.
+
+Some examples include:
+
+### Dynamic Web Pages
+
+PHP can generate content dynamically.
+
+### Form Processing
+
+PHP can collect and process information submitted through HTML forms.
+
+### Database Applications
+
+PHP can communicate with MySQL and other databases.
+
+### E-Commerce
+
+PHP can be used to create shopping carts and other e-commerce functionality.
+
+### User Experiences
+
+PHP can create customized content based on information collected from users.
+
+### Web Tools
+
+PHP can be used to build many types of online tools and applications.
+
+---
+
+# Key PHP Features
+
+Important PHP features include:
+
+* Server-side execution
+* Database connectivity
+* Procedural programming
+* Object-oriented programming
+* Form processing
+* Session management
+* Cookie management
+* File handling
+* Error handling
+* API development
+* Framework support
+* Laravel support
+
+PHP also supports different databases, including:
+
+* MySQL
+* Oracle
+* SQL Server
+
+---
+
+# Procedural and Object-Oriented Programming
+
+PHP supports both **procedural programming** and **object-oriented programming (OOP)**.
+
+## Procedural Programming
+
+Code is organized around procedures and functions.
+
+Example:
+
+```php
+<?php
+
+function greet() {
+    echo "Hello World";
+}
+
+greet();
+
+?>
+```
+
+## Object-Oriented Programming
+
+Code is organized around classes and objects.
+
+Example:
+
+```php
+<?php
+
+class Student {
+    public $name;
+
+    public function sayHello() {
+        echo "Hello " . $this->name;
+    }
+}
+
+$student = new Student();
+$student->name = "Amran";
+$student->sayHello();
+
+?>
+```
+
+PHP can also use a mixture of both approaches.
+
+---
+
+# Prerequisites
+
+Before beginning PHP and MySQL development, students should have a basic understanding of:
+
+## HTML
+
+Especially:
+
+* HTML syntax
+* HTML forms
+
+## Programming
+
+Basic programming concepts are helpful when learning PHP.
+
+Examples:
+
+* Variables
+* Conditions
+* Loops
+* Functions
+* Basic logic
+
+---
+
+# Development Environment
+
+To develop PHP and MySQL applications, a local development environment is required.
+
+The course identifies the following components:
+
+```text
+Operating System
+       +
+Apache Web Server
+       +
+MySQL Database
+       +
+PHP
+       +
+Text Editor / IDE
+       +
+Web Browser
+       +
+Git & GitHub
+```
+
+---
+
+# What Do You Need?
+
+## Operating System
+
+For example:
+
+```text
+Windows
+Linux
+macOS
+```
+
+## Web Server
+
+The course uses **Apache**.
+
+## Database
+
+The course uses **MySQL**.
+
+## Programming Language
+
+The application logic is written using **PHP**.
+
+## Code Editor
+
+Examples include:
+
+* Notepad
+* Notepad++
+* Sublime Text
+* Visual Studio Code
+
+The course uses **Visual Studio Code**.
+
+## Web Browser
+
+Examples include:
+
+* Google Chrome
+* Microsoft Edge
+* Mozilla Firefox
+* Opera
+
+## Version Control
+
+The course also introduces:
+
+* Git
+* GitHub
+
+---
+
+# XAMPP
+
+**XAMPP** is a local web development environment.
+
+It provides several components needed to develop and test PHP applications locally.
+
+XAMPP includes:
+
+```text
+Apache
+MySQL
+PHP
+Perl
+```
+
+XAMPP allows developers to create a local environment where they can:
+
+* Write PHP applications
+* Run applications
+* Test applications
+* Work with databases
+* Develop websites without publishing them online
+
+---
+
+# WAMP, LAMP, MAMP and XAMPP
+
+There are different development environments.
+
+## WAMP
+
+**WAMP** stands for:
+
+```text
+Windows
+Apache
+MySQL
+PHP
+```
+
+It is designed for Windows.
+
+## LAMP
+
+**LAMP** represents:
+
+```text
+Linux
+Apache
+MySQL
+PHP
+```
+
+## MAMP
+
+**MAMP** represents:
+
+```text
+Macintosh
+Apache
+MySQL
+PHP
+```
+
+## XAMPP
+
+XAMPP is cross-platform and can work on:
+
+* Windows
+* Linux
+* macOS
+
+The course recommends XAMPP for setting up a development server.
+
+---
+
+# Apache Web Server
+
+Apache is a web server used to serve web pages and web applications.
+
+The **Apache HTTP Server** is:
+
+* Free
+* Open source
+* Cross-platform
+
+Other popular web servers include:
+
+* Apache
+* Nginx
+* Microsoft IIS
+
+---
+
+# Starting XAMPP
+
+When developing a PHP application, Apache needs to be running.
+
+If your application uses a database, MySQL should also be started.
+
+Typical XAMPP setup:
+
+```text
+Apache     → Start
+MySQL      → Start
+```
+
+Then your PHP application can be accessed through the browser.
+
+---
+
+# Localhost
+
+**localhost** refers to the local computer being used as a server.
+
+Instead of accessing a website on the Internet, you can run your PHP application on your own computer.
+
+Common localhost addresses are:
+
+```text
+http://localhost
+```
+
+or:
+
+```text
+http://127.0.0.1
+```
+
+These addresses point to the local machine.
+
+---
+
+# Apache Default Port
+
+The default Apache port in XAMPP is:
+
+```text
+80
+```
+
+Therefore, you can normally access your local server using:
+
+```text
+http://localhost
+```
+
+However, another application may already be using port 80.
+
+If port 80 is busy, Apache may not start correctly.
+
+---
+
+# Changing the Apache Port
+
+If port 80 is already being used, Apache can be configured to use another port, such as:
+
+```text
+8080
+```
+
+Then the application can be accessed using:
+
+```text
+http://localhost:8080
+```
+
+For example:
+
+```text
+http://localhost:8080/example.php
+```
+
+The port number is written after a colon:
+
+```text
+localhost:8080
+```
+
+---
+
+# Document Root
+
+The **document root** is the main directory from which the local web server serves files.
+
+For XAMPP on Windows, the default document root is:
+
+```text
+C:\xampp\htdocs
+```
+
+All local web projects are normally placed inside the `htdocs` directory.
+
+For example:
+
+```text
+C:\xampp\htdocs\myproject
+```
+
+Then the project can be accessed through:
+
+```text
+http://localhost/myproject/
+```
+
+---
+
+# Project Structure Example
+
+A simple PHP project can look like this:
+
+```text
+htdocs/
+│
+└── myproject/
+    │
+    ├── index.php
+    ├── about.php
+    ├── contact.php
+    └── style.css
+```
+
+The `htdocs` directory is not included in the browser URL because it is configured as the web server's document root.
+
+---
+
+# Creating the First PHP Page
+
+Create a project inside:
+
+```text
+C:\xampp\htdocs
+```
+
+For example:
+
+```text
+C:\xampp\htdocs\test
+```
+
+Then create:
+
+```text
+index.php
+```
+
+Inside the file:
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+    <h1>Hello World!</h1>
+
+    <?php
+        echo "Welcome to PHP & MYSQL Course";
+    ?>
+
+</body>
+
+</html>
+```
+
+---
+
+# PHP Syntax
+
+PHP code is placed between PHP opening and closing tags:
+
+```php
+<?php
+
+// PHP code goes here
+
+?>
+```
+
+For example:
+
+```php
+<?php
+echo "Hello World";
+?>
+```
+
+The `echo` statement is used to output content.
+
+---
+
+# Accessing the PHP Page
+
+If the project is:
+
+```text
+C:\xampp\htdocs\test
+```
+
+and the file is:
+
+```text
+index.php
+```
+
+you can open it in the browser using:
+
+```text
+http://localhost/test/
+```
+
+If Apache uses port 8080:
+
+```text
+http://localhost:8080/test/
+```
+
+---
+
+# Index Page
+
+An `index.php` file is commonly used as the default page of a website or project.
+
+For example:
+
+```text
+http://localhost/test/
+```
+
+can automatically load:
+
+```text
+index.php
+```
+
+Therefore, it is not necessary to write:
+
+```text
+http://localhost/test/index.php
+```
+
+The server can automatically load the index page.
+
+---
+
+# Visual Studio Code
+
+The course uses **Visual Studio Code** as the program editor.
+
+Visual Studio Code provides useful features for programming, including:
+
+* Syntax highlighting
+* Autocompletion
+* IntelliSense
+* Debugging support
+* Code navigation
+* Program testing
+* Function descriptions
+* Extensions
+
+Other editors include:
+
+* Notepad
+* Notepad++
+* Sublime Text
+* phpDesigner
+
+---
+
+# Types of Websites
+
+PHP can be used to develop different types of websites and web applications.
+
+Examples include:
+
+### Social Media
+
+Websites where users communicate and share content.
+
+### E-Commerce
+
+Websites where users can browse products and purchase items.
+
+### Blogs and CMS
+
+Websites used for publishing and managing content.
+
+### Search Engines
+
+Applications that allow users to search for information.
+
+### Knowledge Bases
+
+Websites containing organized information and documentation.
+
+### E-Learning
+
+Online learning platforms.
+
+### Entertainment
+
+Websites and applications that provide entertainment content.
+
+---
+
+# Course Technologies
+
+The course covers several technologies used together in web development.
+
+```text
+HTML
+ ↓
+Page Structure
+
+CSS
+ ↓
+Page Styling
+
+JavaScript
+ ↓
+Client-Side Interaction
+
+jQuery
+ ↓
+Simplified JavaScript / DOM Interaction
+
+PHP
+ ↓
+Server-Side Programming
+
+MySQL
+ ↓
+Database Management
+```
+
+Together, these technologies can be used to build complete web applications.
+
+---
+
+# PHP + MySQL Architecture
+
+A simple PHP and MySQL application can be represented as:
+
+```text
+             USER
+               |
+               ↓
+          WEB BROWSER
+               |
+               | HTTP Request
+               ↓
+        APACHE WEB SERVER
+               |
+               ↓
+              PHP
+               |
+               | SQL
+               ↓
+             MySQL
+               |
+               | Data
+               ↓
+              PHP
+               |
+               | Response
+               ↓
+          WEB BROWSER
+               |
+               ↓
+             USER
+```
+
+This shows how PHP can act as the connection between the web interface and database.
+
+---
+
+# Example Application Flow
+
+Imagine a student registration system.
+
+The user fills out a form:
+
+```text
+Name: Amran
+Email: example@email.com
+```
+
+The browser sends the form data to the server.
+
+```text
+Browser
+   ↓
+PHP
+   ↓
+MySQL
+```
+
+PHP processes the information and stores it in MySQL.
+
+Later, PHP can retrieve the information:
+
+```text
+MySQL
+   ↓
+PHP
+   ↓
+HTML
+   ↓
+Browser
+```
+
+The user can then see the stored information.
+
+---
+
+# Important Terms
+
+| Term       | Meaning                                          |
+| ---------- | ------------------------------------------------ |
+| PHP        | Server-side scripting language                   |
+| MySQL      | Database management system                       |
+| HTML       | Markup language for web pages                    |
+| CSS        | Used for styling web pages                       |
+| JavaScript | Client-side programming language                 |
+| jQuery     | JavaScript library                               |
+| HTTP       | Communication protocol between client and server |
+| Client     | Device/browser making a request                  |
+| Server     | System that receives and processes requests      |
+| Apache     | Web server                                       |
+| XAMPP      | Local PHP development environment                |
+| localhost  | Local computer/server                            |
+| htdocs     | XAMPP document root                              |
+| CRUD       | Create, Read, Update, Delete                     |
+| IDE        | Integrated Development Environment               |
+| Git        | Version control system                           |
+| GitHub     | Platform for hosting Git repositories            |
+
+---
+
+# Basic Workflow for PHP Development
+
+The general workflow is:
+
+```text
+1. Install XAMPP
+        ↓
+2. Start Apache
+        ↓
+3. Start MySQL if database is needed
+        ↓
+4. Create project inside htdocs
+        ↓
+5. Create PHP files
+        ↓
+6. Write PHP code
+        ↓
+7. Open localhost in browser
+        ↓
+8. Test the application
+        ↓
+9. Fix errors
+        ↓
+10. Continue developing
+```
+
+---
+
+# Example Local Project
+
+Suppose we create a project called:
+
+```text
+student-system
+```
+
+The location would be:
+
+```text
+C:\xampp\htdocs\student-system
+```
+
+With:
+
+```text
+student-system/
+│
+├── index.php
+├── students.php
+├── add-student.php
+└── style.css
+```
+
+The home page can be accessed through:
+
+```text
+http://localhost/student-system/
+```
+
+If Apache is running on port 8080:
+
+```text
+http://localhost:8080/student-system/
+```
+
+---
+
+# Troubleshooting
+
+## Apache Does Not Start
+
+One possible reason is that another application is already using Apache's port.
+
+For example:
+
+```text
+Port 80
+Port 443
+```
+
+Check which application is using the port and either stop that application or configure Apache to use another available port.
+
+---
+
+## Port 80 Is Busy
+
+If port 80 is unavailable, configure Apache to use another port such as:
+
+```text
+8080
+```
+
+Then use:
+
+```text
+http://localhost:8080
+```
+
+instead of:
+
+```text
+http://localhost
+```
+
+---
+
+## PHP Page Does Not Run
+
+Make sure:
+
+1. XAMPP is installed.
+2. Apache is running.
+3. The PHP project is inside `htdocs`.
+4. The file has a `.php` extension.
+5. You are opening the project through `localhost`.
+
+For example:
+
+```text
+C:\xampp\htdocs\test\index.php
+```
+
+should be accessed through:
+
+```text
+http://localhost/test/
+```
+
+not by simply double-clicking the PHP file.
+
+---
+
+# Learning Resources
+
+The course materials reference resources including:
+
+* PHP Manual
+* W3Schools
+* TutorialsPoint
+* PHP official documentation
+* *Learning PHP, MySQL, JavaScript, CSS & HTML5*, 6th Edition by Robin Nixon
+* *PHP and MySQL for Dynamic Web Sites* by Larry Ullman
+
+---
+
+# Textbook
+
+The textbook referenced for the course is:
+
+**Learning PHP, MySQL, JavaScript with jQuery, CSS & HTML5, 6th Edition**
+
+**Author:** Robin Nixon
+
+---
+
+# Chapter 1 Summary
+
+Chapter 1 introduces the basic concepts required to begin PHP and MySQL web application development.
+
+The main concepts are:
+
+```text
+Web Applications
+       ↓
+HTTP
+       ↓
+Client & Server
+       ↓
+HTML
+       ↓
+PHP
+       ↓
+MySQL
+       ↓
+XAMPP
+       ↓
+Apache
+       ↓
+localhost
+       ↓
+htdocs
+       ↓
+First PHP Application
+```
+
+The most important idea is understanding how a browser communicates with a web server and how PHP runs on the server to generate a response for the browser.
+
+---
+
+# 🎯 Learning Goals
+
+After completing this chapter, you should be able to explain:
+
+* What PHP is
+* What MySQL is
+* What a web application is
+* What HTTP does
+* What HTML does
+* What a client is
+* What a server is
+* How request and response work
+* How PHP works on the server
+* What XAMPP is
+* What Apache is
+* What localhost means
+* What the `htdocs` directory is
+* How to create a simple PHP page
+* How to access a PHP project through localhost
+* Why Apache and MySQL are used
+* What the difference is between WAMP, LAMP, MAMP, and XAMPP
+* Why Visual Studio Code can be used for PHP development
+
+---
+
+# 🚀 First Practical Exercise
+
+Create the following project:
+
+```text
+C:\xampp\htdocs\php-chapter1
+```
+
+Create:
+
+```text
+index.php
+```
+
+Use:
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Chapter 1</title>
+</head>
+
+<body>
+
+    <h1>Introduction to PHP</h1>
+
+    <?php
+        echo "Welcome to PHP & MySQL";
+    ?>
+
+</body>
+
+</html>
+```
+
+Start Apache in XAMPP and open:
+
+```text
+http://localhost/php-chapter1/
+```
+
+If Apache is running on port `8080`, open:
+
+```text
+http://localhost:8080/php-chapter1/
+```
+
+---
+
+#  Conclusion
+
+PHP provides server-side programming capabilities for creating dynamic and interactive web applications, while MySQL provides database functionality for storing and managing data.
+
+With **HTML, CSS, JavaScript, PHP, MySQL, Apache, and XAMPP**, developers can build and test complete web applications locally before deploying them to a production server.
+
+This chapter provides the foundation for the remaining PHP and MySQL topics in the course.
